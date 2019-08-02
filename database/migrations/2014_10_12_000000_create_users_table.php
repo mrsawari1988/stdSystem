@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('code_melli')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->boolean('full_register')->default(false);
+            $table->integer('register-level')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });

@@ -28,7 +28,6 @@ class CreateMothersTable extends Migration
             $table->text('phone' , 11);
             $table->text('job');
             $table->boolean('is_farhangi')->default(false);
-            $table->boolean('mother_register')->default(false);
             $table->timestamps();
         });
     }

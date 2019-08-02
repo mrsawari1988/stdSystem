@@ -26,7 +26,6 @@ class CreateStudentsTable extends Migration
             $table->text('sh_seri_shenasname');
             $table->text('father_name');
             $table->text('phone' , 11);
-            $table->boolean('student_register')->default(false);
             $table->timestamps();
         });
     }

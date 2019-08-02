@@ -28,7 +28,6 @@ class CreateFathersTable extends Migration
             $table->text('phone' , 11);
             $table->text('job');
             $table->boolean('is_farhangi')->default(false);
-            $table->boolean('father_register')->default(false);
             $table->timestamps();
         });
     }

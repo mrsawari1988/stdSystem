@@ -19,7 +19,7 @@
 Route::group(['namespace' => 'Student' , 'prefix' => 'student'],function (){
 
     //Main Student Pnale
-    //  Route::get('/panel','StudentController@panel')->name('student.panel');
+     Route::get('/panel','StudentController@panel')->name('student.panel');
 
     //Student Register Routes
       Route::get('/register','StudentController@studentRegister')->name('student.register');

@@ -13,6 +13,10 @@ class StudentController extends Controller
 {
  use StudentRegister , FatherRegister , MotherRegister ,AddressRegister;
 
+ public function panel()
+ {
+    return view('student.panel');
+ }
 
 
 

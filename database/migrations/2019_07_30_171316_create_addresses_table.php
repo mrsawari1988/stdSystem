@@ -20,7 +20,6 @@ class CreateAddressesTable extends Migration
             $table->text('address');
             $table->text('post_code', 10);
             $table->text('home_phone' , 8);
-            $table->boolean('address_register')->default(false);
             $table->timestamps();
         });
     }
