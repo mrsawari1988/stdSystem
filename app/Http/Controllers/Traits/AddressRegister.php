@@ -9,11 +9,18 @@
 namespace App\Http\Controllers\Traits;
 
 
+use Illuminate\Support\Facades\Gate;
+
 trait AddressRegister
 {
     public function addressRegister()
     {
-        return view('student.register.address');
+        $user = auth()->user();
+        $status = 3;
+        if(Gate::allows('register_status' ,$status)){
+            return view('student.register.address' , compact('user'));
+        }
+        return redirect()->route('student.panel');
     }
 
     public function addressStore()

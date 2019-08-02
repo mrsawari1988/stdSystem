@@ -13,9 +13,9 @@
 
           <div class="col-md-6"> 
             <div class="form-group">
-              <label for="codemelli" class="col-sm-3 control-label">کد ملی</label>
+              <label for="code_melli" class="col-sm-3 control-label">کد ملی</label>
               <div class="col-sm-9">
-                <input type="text" class="form-control" id="codemelli" name="codemelli" >
+                <input type="text" class="form-control" id="code_melli" name="code_melli" >
               </div>
           </div>
 
@@ -29,18 +29,18 @@
 
         <div class="col-md-6">
             <div class="form-group">
-                <label for="firstname" class="col-sm-3 control-label">نام</label>
+                <label for="first_name" class="col-sm-3 control-label">نام</label>
 
                 <div class="col-sm-9">
-                  <input type="text" class="form-control" id="firstname" name="firstname" >
+                  <input type="text" class="form-control" id="first_name" name="first_name" >
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="fathername" class="col-sm-3 control-label">نام پدر</label>
+                <label for="father_name" class="col-sm-3 control-label">نام پدر</label>
                 
                 <div class="col-sm-9">
-                  <input type="text" class="form-control" id="fathername" name="fathername">
+                  <input type="text" class="form-control" id="father_name" name="father_name">
                 </div>
             </div>
 
@@ -50,18 +50,18 @@
         <div class="col-md-6">
 
             <div class="form-group">
-                <label for="lastname" class="col-sm-3 control-label">نام خانوادگی</label>
+                <label for="last_name" class="col-sm-3 control-label">نام خانوادگی</label>
 
                 <div class="col-sm-9">
-                  <input type="text" class="form-control" id="lastname" name="lastname">
+                  <input type="text" class="form-control" id="last_name" name="last_name">
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="shomareshenasname" class="col-sm-3 control-label">شماره شناسنامه</label>
+                <label for="sh_shenasname" class="col-sm-3 control-label">شماره شناسنامه</label>
                 
                 <div class="col-sm-9">
-                  <input type="text" class="form-control" id="shomareshenasname" name="phone" >
+                  <input type="text" class="form-control" id="sh_shenasname" name="sh_shenasname" >
                 </div>
             </div>
 
@@ -105,30 +105,30 @@
 
           <div class="col-md-6">
               <div class="form-group">
-                  <label for="birthdate" class="col-sm-3 control-label">تاریخ تولد</label>
+                  <label for="birth_date" class="col-sm-3 control-label">تاریخ تولد</label>
                 <div class="col-md-9">
                   <div class="input-group date">
                       <div class="input-group-addon">
                         <i class="fa fa-calendar"></i>
                       </div>
-                      <input type="text" id="tarikh" name="birthdate" class="form-control pull-right"> 
+                      <input type="text" id="tarikh" name="birth_date" class="form-control pull-right">
                     </div>
               </div>
               </div>
   
               <div class="form-group">
-                  <label for="birthissue" class="col-sm-3 control-label">محل صدور</label>
+                  <label for="birth_issued" class="col-sm-3 control-label">محل صدور</label>
                   
                   <div class="col-sm-9">
-                    <input type="text" class="form-control" id="birthissue" name="birthissue">
+                    <input type="text" class="form-control" id="birth_issued" name="birth_issued">
                   </div>
               </div>
 
               <div class="form-group">
-                  <label for="horoofserialshenasname" class="col-sm-3 control-label">حرف سریال شناسنامه</label>
+                  <label for="horoof_shenasname" class="col-sm-3 control-label">حرف سریال شناسنامه</label>
                   
                   <div class="col-sm-9">
-                    <select name="horoofserialshenasname" id="horoofserialshenasname" class="form-control">
+                    <select name="horoof_shenasname" id="horoof_shenasname" class="form-control">
                         <option selected="selected" value="1">الف</option>
                         <option value="2">ب</option>
                         <option value="3">پ</option>
@@ -187,10 +187,10 @@
           <div class="col-md-6">
   
               <div class="form-group">
-                  <label for="birthplace" class="col-sm-3 control-label">محل تولد</label>
+                  <label for="birth_place" class="col-sm-3 control-label">محل تولد</label>
   
                   <div class="col-sm-9">
-                    <input type="text" class="form-control" id="birthplace" name="birthplace">
+                    <input type="text" class="form-control" id="birth_place" name="birth_place">
                   </div>
               </div>
   
@@ -203,10 +203,10 @@
               </div>
 
               <div class="form-group">
-                  <label for="shomareseri" class="col-sm-3 control-label">ش سری شناسنامه</label>
+                  <label for="sh_seri_shenasname" class="col-sm-3 control-label">ش سری شناسنامه</label>
                   
                   <div class="col-sm-9">
-                    <input type="text" class="form-control" id="shomareseri" name="shomareseri" >
+                    <input type="text" class="form-control" id="sh_seri_shenasname" name="sh_seri_shenasname" >
                   </div>
               </div>
   

@@ -9,12 +9,19 @@
 namespace App\Http\Controllers\Traits;
 
 
+use Illuminate\Support\Facades\Gate;
+
 trait MotherRegister
 {
 
     public function motherRegister()
     {
-        return view('student.register.mother');
+        $user = auth()->user();
+        $status = 2;
+        if(Gate::allows('register_status' ,$status)){
+            return view('student.register.mother' , compact('user'));
+        }
+        return redirect()->route('address.register');
     }
 
     public function motherStore()

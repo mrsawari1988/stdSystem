@@ -15,7 +15,8 @@ class StudentController extends Controller
 
  public function panel()
  {
-    return view('student.panel');
+     $user = auth()->user();
+    return view('student.panel', compact('user'));
  }
 
 

@@ -17,9 +17,9 @@ class CreateAddressesTable extends Migration
             $table->bigIncrements('id');
             $table->biginteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->text('address');
-            $table->text('post_code', 10);
-            $table->text('home_phone' , 8);
+            $table->string('address');
+            $table->string('post_code', 10)->nullable();
+            $table->string('home_phone' , 8);
             $table->timestamps();
         });
     }

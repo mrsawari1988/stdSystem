@@ -18,13 +18,13 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('family');
             $table->string('email')->unique();
-            $table->string('role');
-            $table->string('phone')->nullable();
+            $table->string('role')->default('student');
+            $table->string('phone',11)->nullable();
             $table->string('username')->unique();
             $table->string('code_melli')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->integer('register-level')->default(0);
+            $table->integer('register_status')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });
