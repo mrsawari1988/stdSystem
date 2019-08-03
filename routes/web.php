@@ -11,9 +11,10 @@
 |
 */
 
-//Route::get('/', function () {
-//
-//});
+Route::get('/', function () {
+
+
+});
 
 
 Route::group(['namespace' => 'Student' , 'prefix' => 'student'],function (){
@@ -29,19 +30,19 @@ Route::group(['namespace' => 'Student' , 'prefix' => 'student'],function (){
 
     //Student Register Routes
         Route::get('/father/register','StudentController@fatherRegister')->name('father.register');
-        //Route::post('/father/register','StudentController@fatherStore')->name('father.store');
+        Route::post('/father/register','StudentController@fatherStore')->name('father.store');
         //Route::get('/father/edit','StudentController@fatherEdit')->name('father.edit');
         //Route::post('/father/edit','StudentController@fatherUpdate')->name('father.update');
 
     //Student Register Routes
         Route::get('/mother/register','StudentController@motherRegister')->name('mother.register');
-        //Route::post('/mother/register','StudentController@motherStore')->name('mother.store');
+        Route::post('/mother/register','StudentController@motherStore')->name('mother.store');
         //Route::get('/mother/edit','StudentController@motherEdit')->name('mother.edit');
         //Route::post('/mother/edit','StudentController@motherUpdate')->name('mother.update');
 
     //Student Register Routes
         Route::get('/address/register','StudentController@addressRegister')->name('address.register');
-        //Route::post('/address/register','StudentController@addressStore')->name('address.store');
+        Route::post('/address/register','StudentController@addressStore')->name('address.store');
         //Route::get('/address/edit','StudentController@addressEdit')->name('address.edit');
         //Route::post('/address/edit','StudentController@addressUpdate')->name('address.update');
 

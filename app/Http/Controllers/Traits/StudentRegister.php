@@ -10,6 +10,9 @@ namespace App\Http\Controllers\Traits;
 
 
 
+use App\Http\Requests\StudentRequest;
+use App\Student;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use function Sodium\compare;
@@ -34,9 +37,32 @@ trait StudentRegister
 
     }
 
-    public function studentStore(Request $request)
+    public function studentStore(StudentRequest $studentRequest)
     {
-        return $request->all();
+
+        $data = [
+            'code_melli' => auth()->user()->code_melli,
+            'birth_date'=> request()->input('birth_date'),
+            'birth_place' => request()->input('birth_place'),
+            'birth_issued' => request()->input('birth_issued'),
+            'serial_shenasname' => request()->input('serial_shenasname'),
+            'horoof_shenasname' => request()->input('horoof_shenasname'),
+            'sh_seri_shenasname' => request()->input('sh_seri_shenasname'),
+            'father_name' => request()->input('horoof_shenasname'),
+            'phone'=> request()->input('horoof_shenasname')
+        ];
+        $student = auth()->user()->student()->create($data);
+
+        if($student instanceof Student) {
+            //changing the register status of the user to not complete student information again and go to next step
+            $user = User::find(auth()->user()->id);
+            $user->register_status = 1;
+            $user->save();
+
+            //returning the user back so , due to his register status , he will be redirected to proper level of register
+            return back();
+        }
+        return 'wrong !!!!!';
     }
 
     public function studentEdit()

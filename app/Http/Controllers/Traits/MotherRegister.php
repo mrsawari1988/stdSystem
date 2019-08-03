@@ -9,6 +9,9 @@
 namespace App\Http\Controllers\Traits;
 
 
+use App\Http\Requests\MotherRequest;
+use App\Mother;
+use App\User;
 use Illuminate\Support\Facades\Gate;
 
 trait MotherRegister
@@ -24,8 +27,20 @@ trait MotherRegister
         return redirect()->route('address.register');
     }
 
-    public function motherStore()
+    public function motherStore(MotherRequest $motherRequest)
     {
+        $mother = auth()->user()->mother()->create(request()->all());
+
+        if($mother instanceof Mother) {
+            //changing the register status of the user to not complete student information again and go to next step
+            $user = User::find(auth()->user()->id);
+            $user->register_status = 3;
+            $user->save();
+
+            //returning the user back so , due to his register status , he will be redirected to proper level of register
+            return back();
+        }
+        return 'wrong !!!!!';
 
     }
 

@@ -9,6 +9,8 @@
 namespace App\Http\Controllers\Traits;
 
 
+use App\Address;
+use App\User;
 use Illuminate\Support\Facades\Gate;
 
 trait AddressRegister
@@ -25,6 +27,18 @@ trait AddressRegister
 
     public function addressStore()
     {
+        $address = auth()->user()->address()->create(request()->all());
+
+        if($address instanceof Address) {
+            //changing the register status of the user to not complete student information again and go to next step
+            $user = User::find(auth()->user()->id);
+            $user->register_status = 4;
+            $user->save();
+
+            //returning the user back so , due to his register status , he will be redirected to proper level of register
+            return back();
+        }
+        return 'wrong !!!!!';
 
     }
 
