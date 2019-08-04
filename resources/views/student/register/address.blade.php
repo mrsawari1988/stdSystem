@@ -2,9 +2,14 @@
 
 @section('content')
 <div class="box box-default">
+
+    <!-- Box Header -->
     <div class="box-header with-border">
       <h3 class="box-title">ثبت اطلاعات تماس و آدرس</h3>
     </div>
+    <!-- End of Box Header -->
+
+    <!-- Box Body -->
     <div class="box-body">
         @if ($errors->any())
             <div class="alert alert-danger">

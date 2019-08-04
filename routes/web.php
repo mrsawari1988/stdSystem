@@ -12,10 +12,14 @@
 */
 
 Route::get('/', function () {
-
+    return auth()->user();
 
 });
 
+Route::group(['namespace' => 'Admin' , 'prefix' => 'admin'],function (){
+    Route::get('/student/create' , 'StudentController@create')->name('admin.student.create');
+    Route::post('/student/create' , 'StudentController@store')->name('admin.student.store');
+});
 
 Route::group(['namespace' => 'Student' , 'prefix' => 'student'],function (){
 
