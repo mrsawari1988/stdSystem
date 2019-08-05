@@ -17,6 +17,9 @@ Route::get('/', function () {
 });
 
 Route::group(['namespace' => 'Admin' , 'prefix' => 'admin'],function (){
+
+    Route::get('/students' , 'StudentController@students')->name('admin.students.show');
+
     Route::get('/student/create' , 'StudentController@create')->name('admin.student.create');
     Route::post('/student/create' , 'StudentController@store')->name('admin.student.store');
 });

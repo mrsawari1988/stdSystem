@@ -9,6 +9,12 @@ use App\Http\Controllers\Controller;
 
 class StudentController extends Controller
 {
+    public function students()
+    {
+        $users = User::whereRole('student')->with('father')->get();
+        //dd($users);
+        return view('admin.student.all' , compact('users'));
+    }
     public function create()
     {
         return view('admin.student.create');
