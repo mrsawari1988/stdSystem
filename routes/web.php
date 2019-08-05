@@ -12,11 +12,14 @@
 */
 
 Route::get('/', function () {
+    //auth()->loginUsingId(3);
     return auth()->user();
 
 });
 
-Route::group(['namespace' => 'Admin' , 'prefix' => 'admin'],function (){
+Route::get('/redirect','PanelController@redirect');
+
+Route::group(['namespace' => 'Admin' , 'prefix' => 'admin' , 'middleware'=>'admin'],function (){
 
     Route::get('/students' , 'StudentController@students')->name('admin.students.show');
 
@@ -24,7 +27,7 @@ Route::group(['namespace' => 'Admin' , 'prefix' => 'admin'],function (){
     Route::post('/student/create' , 'StudentController@store')->name('admin.student.store');
 });
 
-Route::group(['namespace' => 'Student' , 'prefix' => 'student'],function (){
+Route::group(['namespace' => 'Student' , 'prefix' => 'student' , 'middleware'=>'student'],function (){
 
     //Main Student Pnale
      Route::get('/panel','StudentController@panel')->name('student.panel');
@@ -55,3 +58,8 @@ Route::group(['namespace' => 'Student' , 'prefix' => 'student'],function (){
 
 
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/logout', 'PanelController@logout')->name('logout');
